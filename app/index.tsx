@@ -1,8 +1,16 @@
 import { Ionicons } from "@expo/vector-icons";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { router } from "expo-router";
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 const index = () => {
   return (
-    <View style={styles.contsiner}>
+    <SafeAreaView style={styles.contsiner}>
       <View style={styles.topContent}>
         <View style={styles.logoContainer}>
           <Image
@@ -16,7 +24,12 @@ const index = () => {
         </Text>
       </View>
       <View style={styles.botomBar}>
-        <TouchableOpacity style={styles.startBtn}>
+        <TouchableOpacity
+          style={styles.startBtn}
+          onPress={() => {
+            router.push("/(auth)/signUp");
+          }}
+        >
           <Text style={styles.btnTitel}>Let s get started</Text>
         </TouchableOpacity>
         <View style={styles.haveAcc}>
@@ -30,7 +43,7 @@ const index = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 export default index;
@@ -43,8 +56,8 @@ const styles = StyleSheet.create({
   topContent: {
     flex: 3,
     alignItems: "center",
-    justifyContent: "center",
-    gap: 30,
+    justifyContent: "flex-end",
+    paddingBottom: 40,
   },
   logoContainer: {
     alignItems: "center",
@@ -63,10 +76,13 @@ const styles = StyleSheet.create({
     fontSize: 52,
     textAlign: "center",
     fontWeight: "700",
+    paddingTop: 30,
   },
   subTitel: {
+    paddingTop: 30,
     lineHeight: 25,
-    paddingHorizontal: 90,
+    paddingHorizontal: 34,
+    maxWidth: 320,
     fontSize: 20,
     textAlign: "center",
     color: "grey",
@@ -81,7 +97,7 @@ const styles = StyleSheet.create({
   startBtn: {
     backgroundColor: "#004cffc8",
     height: 70,
-    width: 350,
+    paddingHorizontal: 85,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 22,
@@ -91,7 +107,8 @@ const styles = StyleSheet.create({
     color: "#F2F2F2",
   },
   haveAccount: {
-    fontSize: 20,
+    fontSize: 18,
+    color: "#555",
   },
   haveAcc: {
     flexDirection: "row",
@@ -99,9 +116,9 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   arrowBtn: {
-    height: 40,
-    width: 40,
-    borderRadius: 20,
+    height: 44,
+    width: 44,
+    borderRadius: 22,
     backgroundColor: "#004cffc8",
     alignItems: "center",
     justifyContent: "center",
