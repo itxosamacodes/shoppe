@@ -19,22 +19,7 @@ const signIn = () => {
         <View style={styles.otp}>
           <TextInput
             style={styles.inputs}
-            placeholder="0"
-            placeholderTextColor="#B0B0B0"
-          />
-          <TextInput
-            style={styles.inputs}
-            placeholder="0"
-            placeholderTextColor="#B0B0B0"
-          />
-          <TextInput
-            style={styles.inputs}
-            placeholder="0"
-            placeholderTextColor="#B0B0B0"
-          />
-          <TextInput
-            style={styles.inputs}
-            placeholder="0"
+            placeholder="1 2 3 1 2 3"
             placeholderTextColor="#B0B0B0"
           />
         </View>
@@ -84,8 +69,8 @@ const styles = StyleSheet.create({
   },
 
   inputs: {
-    height: 50,
-    width: 50,
+    height: 60,
+    width: "80%",
     backgroundColor: "#F8F8F8",
     borderRadius: 10,
     marginHorizontal: 6,
